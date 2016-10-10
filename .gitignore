@@ -5,13 +5,15 @@
 target
 tmp
 .history
-/.idea
-/*.iml
-/out
-/.idea_modules
-/.classpath
-/.project
-/RUNNING_PID
+.idea
+*.iml
+*.ipr
+*.iws
+out
+.idea_modules
+.classpath
+.project
+RUNNING_PID
 
 
 # Mobile Tools for Java (J2ME)
