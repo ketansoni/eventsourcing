@@ -18,6 +18,7 @@
         <version>1.4.1.RELEASE</version>
     </parent>
 
+    <dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.axonframework</groupId>
@@ -33,6 +34,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>1.4.1.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -53,8 +55,13 @@
             <version>1.4.192</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>1.4.1.RELEASE</version>
+        </dependency>
 
     </dependencies>
+    </dependencyManagement>
 
 </project>
