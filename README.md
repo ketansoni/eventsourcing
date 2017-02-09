@@ -1,2 +1,6 @@
 # eventsourcing
-This is small app demonstrating event sourcing system
+An event sourcing application demonstration using Axon CQRS framework.
+
+#Pre-requisites
+Rabbitmq
+H2 Jar
