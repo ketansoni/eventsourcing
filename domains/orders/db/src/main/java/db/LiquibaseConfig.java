@@ -1,4 +1,4 @@
-package com.ketan.ecom.db;
+package db;
 
 import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class LiquibaseConfig {
         return DataSourceBuilder.create()
                 .driverClassName("org.h2.Driver")
                 .type(org.h2.jdbcx.JdbcDataSource.class)
-                .url("jdbc:h2:/Users/ketansoni/Documents/code/Personal/eventsourcing/domains/customers/db/target/customers-db;AUTO_SERVER=TRUE")
+                .url("jdbc:h2:/Users/ketansoni/Documents/code/Personal/eventsourcing/domains/orders/db/target/orders-db;AUTO_SERVER=TRUE")
 //                .url("jdbc:h2:mem:liquibase")
                 .username("sa")
                 .password("")

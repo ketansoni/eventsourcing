@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="es-1" author="ksoni">
+        <createTable tableName="domain_event_entry">
+            <column name="aggregate_identifier" type="varchar2(255)"/>
+            <column name="sequence_number" type="number(40)"/>
+            <column name="type" type="varchar2(255)"/>
+            <column name="payload" type="varchar2(4000)"/>
+            <column name="payload_ype" type="varchar2(255)"/>
+            <column name="payload_revision" type="varchar2(255)"/>
+            <column name="metadata" type="varchar2(4000)"/>
+            <column name="event_identifier" type="varchar2(255)"/>
+            <column name="timeStamp" type="varchar2(255)"/>
+        </createTable>
+        <rollback>
+            drop table domain_event_entry
+        </rollback>
+    </changeSet>
+
+    <changeSet id="es-2" author="ksoni">
+        <createTable tableName="snapshopt_event_entry">
+            <column name="aggregate_identifier" type="varchar2(255)"/>
+            <column name="sequence_number" type="number(40)"/>
+            <column name="type" type="varchar2(255)"/>
+            <column name="payload" type="varchar2(4000)"/>
+            <column name="payload_ype" type="varchar2(255)"/>
+            <column name="payload_revision" type="varchar2(255)"/>
+            <column name="metadata" type="varchar2(4000)"/>
+            <column name="event_identifier" type="varchar2(255)"/>
+            <column name="timeStamp" type="varchar2(255)"/>
+        </createTable>
+        <rollback>
+            drop table snapshopt_event_entry
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>
