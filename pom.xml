@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>HighLevelGroup</groupId>
+    <groupId>com.ketan</groupId>
     <artifactId>Ecommerce</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>libs/axon-commons</module>
         <module>domains/customers</module>
         <module>domains/orders</module>
+        <module>libs</module>
     </modules>
 
     <parent>
@@ -19,6 +19,11 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.4.1.RELEASE</version>
     </parent>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <dependencyManagement>
     <dependencies>
@@ -38,7 +43,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>1.4.1.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>4.3.6.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -63,15 +72,20 @@
             <version>1.4.1.RELEASE</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.10.5.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
-            <version>1.5.1.RELEASE</version>
+            <version>1.4.1.RELEASE</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.amqp</groupId>-->
-            <!--<artifactId>spring-rabbit</artifactId>-->
-            <!--<version>1.7.0.RELEASE</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <version>1.12.3.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>org.axonframework</groupId>
             <artifactId>axon-amqp</artifactId>
@@ -82,7 +96,77 @@
             <artifactId>amqp-client</artifactId>
             <version>3.5.0</version>
         </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>db-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>customers-db</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>orders-db</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>axon-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.2.4.Final</version>
+        </dependency>
     </dependencies>
+
     </dependencyManagement>
+
+
+    <profiles>
+        <profile>
+            <id>db</id>
+            <activation>
+                <file>
+                    <exists>src/main/resources/database.properties</exists>
+                </file>
+            </activation>
+            <properties>
+                <ecom.type>db</ecom.type>
+            </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <addResources>false</addResources>
+                    <classifier>app</classifier>
+                    <mainClass>com.ketan.ecom.db.Application</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+        </profile>
+
+    </profiles>
 
 </project>

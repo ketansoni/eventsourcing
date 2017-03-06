@@ -6,15 +6,15 @@
         <groupId>com.ketan</groupId>
         <artifactId>Ecommerce</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../..</relativePath>
+        <relativePath>..</relativePath>
     </parent>
+    <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>orders-domain</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>libs</artifactId>
     <modules>
-        <module>api</module>
-        <module>db</module>
+        <module>db-commons</module>
+        <module>axon-commons</module>
     </modules>
 
 

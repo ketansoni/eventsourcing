@@ -1,7 +1,8 @@
 package com.ketan.ecom.command.domain;
 
-import com.ketan.ecom.command.NewCustomerCommand;
-import com.ketan.ecom.command.event.NewCustomerEvent;
+import com.ketan.ecom.customer.command.NewCustomerCommand;
+import com.ketan.ecom.customer.command.domain.Customer;
+import com.ketan.ecom.customer.command.event.NewCustomerEvent;
 import org.axonframework.test.FixtureConfiguration;
 import org.axonframework.test.Fixtures;
 import org.junit.Before;

@@ -3,16 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
+        <groupId>com.ketan</groupId>
         <artifactId>orders-domain</artifactId>
-        <groupId>HighLevelGroup</groupId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>orders</artifactId>
+    <name>Ecom Order API</name>
+    <description>Domain to manage orders</description>
     <packaging>war</packaging>
 
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
     <dependencies>
         <dependency>
             <groupId>org.axonframework</groupId>
@@ -28,19 +38,25 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>HighLevelGroup</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>orders-db</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>HighLevelGroup</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>axon-commons</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

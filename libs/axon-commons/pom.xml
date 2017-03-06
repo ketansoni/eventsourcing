@@ -3,15 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>Ecommerce</artifactId>
-        <groupId>HighLevelGroup</groupId>
+        <groupId>com.ketan</groupId>
+        <artifactId>libs</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>axon-commons</artifactId>
+    <name>Axon Core Framework</name>
+    <packaging>jar</packaging>
 
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
             <groupId>org.axonframework</groupId>
@@ -33,6 +47,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
         </dependency>
     </dependencies>
 
