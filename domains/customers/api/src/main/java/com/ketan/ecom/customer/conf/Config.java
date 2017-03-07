@@ -18,7 +18,6 @@ public class Config {
     @Bean
     public EventSourcingRepository<Customer> customerEventSourcingRepository(EventStore eventStore, EventBus eventBus, CommandBus commandBus, NewCustomerEventListener eventListener) {
 
-        System.out.println("******************************"+eventListener);
         EventSourcingRepository repository = new EventSourcingRepository(Customer.class, eventStore);
         repository.setEventBus(eventBus);
         AggregateAnnotationCommandHandler.subscribe(Customer.class, repository, commandBus);

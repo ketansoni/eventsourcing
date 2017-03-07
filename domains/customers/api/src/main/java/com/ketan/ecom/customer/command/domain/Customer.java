@@ -8,9 +8,6 @@ import org.axonframework.eventhandling.annotation.EventHandler;
 import org.axonframework.eventsourcing.annotation.AbstractAnnotatedAggregateRoot;
 import org.axonframework.eventsourcing.annotation.AggregateIdentifier;
 
-/**
- * Created by ketansoni on 07/10/2016.
- */
 public class Customer extends AbstractAnnotatedAggregateRoot {
 
     @AggregateIdentifier

@@ -6,10 +6,6 @@ import org.springframework.data.domain.Persistable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * Created by ketansoni on 12/10/2016.
- */
-
 @Entity
 public class CustomerView implements Persistable<String>{
 

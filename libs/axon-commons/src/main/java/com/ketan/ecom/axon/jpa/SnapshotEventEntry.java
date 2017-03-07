@@ -5,9 +5,6 @@ import org.axonframework.serializer.SerializedObject;
 
 import javax.persistence.Entity;
 
-/**
- * Created by ketansoni on 27/02/2017.
- */
 @Entity
 public class SnapshotEventEntry extends AbstractEventEntry {
 

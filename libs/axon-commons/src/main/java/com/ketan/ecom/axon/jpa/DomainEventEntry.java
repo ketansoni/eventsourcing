@@ -6,9 +6,6 @@ import org.joda.time.DateTime;
 
 import javax.persistence.Entity;
 
-/**
- * Created by ketansoni on 27/02/2017.
- */
 @Entity
 public class DomainEventEntry extends AbstractEventEntry {
 

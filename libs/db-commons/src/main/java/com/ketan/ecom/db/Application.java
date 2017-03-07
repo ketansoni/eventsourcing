@@ -11,7 +11,6 @@ import org.springframework.context.annotation.ComponentScan;
         "com.ketan.ecom.db",
         "com.ketan.ecom.**.db",
         "com.ketan.ecom.spring.configuration"})
-//@EnableAutoConfiguration
 public class Application {
 
     public static void main(String... args) {

@@ -11,9 +11,6 @@ import javax.persistence.Basic;
 import javax.persistence.MappedSuperclass;
 
 
-/**
- * Created by ketansoni on 21/02/2017.
- */
 @MappedSuperclass
 public class AbstractEventEntry extends AbstractEventEntryData<String> {
 

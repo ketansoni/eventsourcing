@@ -6,9 +6,6 @@ import org.joda.time.DateTime;
 import org.axonframework.eventstore.jpa.*;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/**
- * Created by ketansoni on 21/02/2017.
- */
 @EnableTransactionManagement
 public class DefaultEventEntryFactory implements EventEntryFactory<String> {
     @Override
