@@ -35,7 +35,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="order-es-1" author="ksoni">
+    <changeSet id="order-es-2" author="ksoni">
         <createTable tableName="snapshot_event_entry">
             <column name="aggregate_identifier" type="varchar2(255)">
                 <constraints nullable="false"/>
