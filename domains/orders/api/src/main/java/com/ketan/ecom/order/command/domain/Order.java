@@ -4,16 +4,22 @@ import com.ketan.ecom.order.ORDERSTATUS;
 import com.ketan.ecom.order.command.PlaceAnOrderCommand;
 import org.axonframework.commandhandling.annotation.CommandHandler;
 import org.axonframework.eventsourcing.annotation.AbstractAnnotatedAggregateRoot;
+import org.axonframework.eventsourcing.annotation.AggregateIdentifier;
 import org.axonframework.eventsourcing.annotation.EventSourcingHandler;
 
 /**
  * Created by nikeshshetty on 3/15/17.
  */
 public class Order extends AbstractAnnotatedAggregateRoot<String> {
+    @AggregateIdentifier
     private String id;
     private String name;
     private int price;
     private ORDERSTATUS orderStatus;
+
+    public Order() {
+    }
+
 
     @EventSourcingHandler
     public void on(OrderCreatedEvent orderCreatedEvent) {
@@ -25,7 +31,7 @@ public class Order extends AbstractAnnotatedAggregateRoot<String> {
 
 
     @CommandHandler
-    public void handle(PlaceAnOrderCommand command) {
+    public Order(PlaceAnOrderCommand command) {
         apply(new OrderCreatedEvent(command.getId(), command.getOrderName(), command.getPrice(), command.getCustomerId()));
     }
 
