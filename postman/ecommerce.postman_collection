@@ -1,0 +1,53 @@
+{
+	"id": "c6585bb4-071a-ba12-c614-bef51a901b58",
+	"name": "ecommerce",
+	"description": "",
+	"order": [
+		"adebf8d0-a24d-d8ad-4e74-f7ef0a85a366",
+		"5d63d9d7-2334-e785-d762-aebcf3253c1b"
+	],
+	"folders": [],
+	"timestamp": 1489598867968,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "5d63d9d7-2334-e785-d762-aebcf3253c1b",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:9098/place/4",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1489675738766,
+			"name": "CreateOrder",
+			"description": "",
+			"collectionId": "c6585bb4-071a-ba12-c614-bef51a901b58",
+			"responses": [],
+			"rawModeData": "{}"
+		},
+		{
+			"id": "adebf8d0-a24d-d8ad-4e74-f7ef0a85a366",
+			"headers": "Content-Type: application/javascript\n",
+			"url": "http://localhost:8080/customers/3",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1489654020570,
+			"name": "createCustomer",
+			"description": "",
+			"collectionId": "c6585bb4-071a-ba12-c614-bef51a901b58",
+			"responses": [],
+			"rawModeData": "{}"
+		}
+	]
+}
