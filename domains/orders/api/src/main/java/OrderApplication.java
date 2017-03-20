@@ -11,9 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration
 @ComponentScan("com.ketan.ecom")
 @AnnotationDriven
-public class Application {
+public class OrderApplication {
     public static void main(String[] args) {
-        SpringApplication springApplication = new SpringApplication(Application.class);
+        SpringApplication springApplication = new SpringApplication(OrderApplication.class);
         springApplication.run(args);
     }
 }

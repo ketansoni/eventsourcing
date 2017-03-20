@@ -1,5 +1,6 @@
 package com.ketan.ecom.customer.command;
 
+import org.axonframework.commandhandling.annotation.TargetAggregateIdentifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  */
 public class CheckCreditForOrderCommand {
     private final String orderId;
+    @TargetAggregateIdentifier
     private final String customerId;
     private final String orderName;
     private final int price;

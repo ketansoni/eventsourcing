@@ -1,4 +1,4 @@
-package com.ketan.ecom.customer.external.events;
+package com.ketan.ecom.order.command.domain;
 
 
 /**

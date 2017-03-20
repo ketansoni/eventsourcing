@@ -10,10 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration
 @ComponentScan("com.ketan.ecom")
 @AnnotationDriven
-public class Application {
+public class CustomerApplication {
 
     public static void main(String[] args) {
-        SpringApplication springApplication = new SpringApplication(Application.class);
+        SpringApplication springApplication = new SpringApplication(CustomerApplication.class);
         springApplication.run(args);
     }
 }

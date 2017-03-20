@@ -1,7 +1,7 @@
 package com.ketan.ecom.customer.command.listener;
 
 import com.ketan.ecom.customer.command.CheckCreditForOrderCommand;
-import com.ketan.ecom.customer.external.events.OrderCreatedEvent;
+import com.ketan.ecom.order.command.domain.OrderCreatedEvent;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventhandling.annotation.EventHandler;
 import org.springframework.beans.factory.annotation.Autowired;
